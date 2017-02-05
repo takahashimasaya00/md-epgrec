@@ -1,6 +1,5 @@
-# md-epgrec
-Angular Material2でepgrec。Angular2勉強用なので完成しないかも。
 # MdEpgrec
+Angular Material2でepgrec。Angular2勉強用なので完成しないかも。
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
