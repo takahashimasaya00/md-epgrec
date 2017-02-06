@@ -2,9 +2,6 @@
 
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 
-body {
-  margin: 0;
-}
 /*
 @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 */
@@ -14,3 +11,6 @@ body {
 /*
 @import '~@angular/material/core/theming/prebuilt/purple-green.css';
 */
+body {
+  margin: 0;
+}
