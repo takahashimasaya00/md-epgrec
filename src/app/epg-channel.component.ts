@@ -1,8 +1,9 @@
 import { Component, HostListener } from '@angular/core';
-import { CommonService } from './common/common.service';
+import { DeviceService } from './device/device.service';
 import { WindowRefService } from './window-ref/window-ref.service';
+import { ProgramService, Program } from './program/program.service';
 
-let commonSrv: CommonService;
+let deviceSrv: DeviceService;
 
 @Component({
   selector: 'app-epg-channel',
@@ -12,14 +13,24 @@ let commonSrv: CommonService;
 
 export class EpgChannelComponent {
   isDeviceXs: boolean;
+  progList: Program[];
 
-  constructor(private common: CommonService, private winRef: WindowRefService) {
-    commonSrv = common;
-    this.isDeviceXs = commonSrv.isDeviceXs(winRef.nativeWindows.innerWidth);
+  constructor(
+    private device: DeviceService,
+    private winRef: WindowRefService,
+    private prog: ProgramService
+  ) {
+    // inject service
+    deviceSrv = device;
+    this.progList = prog.getProgram(0, '', '');
+
+    // width check
+    this.isDeviceXs = deviceSrv.isMobile(winRef.nativeWindows.innerWidth);
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.isDeviceXs = commonSrv.isDeviceXs(event.target.innerWidth);
+    // width check
+    this.isDeviceXs = deviceSrv.isMobile(event.target.innerWidth);
   }
 }

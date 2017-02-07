@@ -1,8 +1,8 @@
 import { Component, HostListener } from '@angular/core';
-import { CommonService } from './common/common.service';
+import { DeviceService } from './device/device.service';
 import { WindowRefService } from './window-ref/window-ref.service';
 
-let commonSrv: CommonService;
+let deviceSrv: DeviceService;
 
 @Component({
   selector: 'app-epgrec',
@@ -19,8 +19,8 @@ export class EpgrecComponent {
   sideNavMode: string;
   sideNavOpened: boolean;
 
-  constructor(private common: CommonService, private winRef: WindowRefService) {
-    commonSrv = common;
+  constructor(private device: DeviceService, private winRef: WindowRefService) {
+    deviceSrv = device;
     this.setSideNavStyle(winRef.nativeWindows.innerWidth);
   };
 
@@ -30,7 +30,7 @@ export class EpgrecComponent {
   };
 
   setSideNavStyle(width: number): void {
-    if (commonSrv.isDeviceXs(width)) {
+    if (deviceSrv.isMobile(width)) {
       this.sideNavMode = this.SIDENAV.OVER;
       this.sideNavOpened = false;
     } else {

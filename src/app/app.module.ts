@@ -10,8 +10,9 @@ import { EpgrecComponent } from './epgrec.component';
 import { EpgChannelComponent } from './epg-channel.component';
 
 // My Services
-import { CommonService } from './common/common.service';
+import { DeviceService } from './device/device.service';
 import { WindowRefService } from './window-ref/window-ref.service';
+import { ProgramService } from './program/program.service';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,9 @@ import { WindowRefService } from './window-ref/window-ref.service';
     MaterialModule.forRoot()
   ],
   providers: [
-    CommonService,
-    WindowRefService
+    DeviceService,
+    WindowRefService,
+    ProgramService
   ],
   bootstrap: [AppComponent]
 })

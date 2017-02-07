@@ -15,7 +15,7 @@ const DEVICE_PRESET: Device[] = [
 ];
 
 @Injectable()
-export class CommonService {
+export class DeviceService {
   getDevice(width: number): Device {
     let ret: Device;
 
@@ -29,7 +29,7 @@ export class CommonService {
     return ret;
   }
 
-  isDeviceXs(width: number): boolean {
+  isMobile(width: number): boolean {
     for (let i = 0 ; i < DEVICE_PRESET.length; i++) {
       if (DEVICE_PRESET[i].device === 'xs') {
         return this.getDevice(width).maxWidth <= DEVICE_PRESET[i].maxWidth;

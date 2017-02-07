@@ -1,0 +1,23 @@
+/*
+#tvtable div.ctg_news, #category_select a.ctg_news {background-color: #FFFFD8;}
+#tvtable div.ctg_etc, #category_select a.ctg_etc {background-color: #FFFFFF;}
+#tvtable div.ctg_information, #category_select a.ctg_information {background-color: #F2D8FF;}
+#tvtable div.ctg_sports, #category_select a.ctg_sports {background-color: #D8FFFF;}
+#tvtable div.ctg_cinema, #category_select a.ctg_cinema {background-color: #FFD8D8;}
+#tvtable div.ctg_music, #category_select a.ctg_music {background-color: #D8D8FF;}
+#tvtable div.ctg_drama, #category_select a.ctg_drama {background-color: #D8FFD8;}
+#tvtable div.ctg_anime, #category_select a.ctg_anime {background-color: #FFE4C8;}
+#tvtable div.ctg_variety, #category_select a.ctg_variety {background-color: #FFD2EB;}
+#tvtable div.ctg_10, #category_select a.ctg_10 {background-color: #E4F4F4;}
+#tvtable div.ctg-hide, #category_select a.ctg-hide {background-color: #F8F8F8;color:#888;}
+#tvtable div.ctg-hide .prg_title, #category_select a.ctg-hide .prg_title{color:#666;}
+#tvtable div.prg_rec  {background-color: #F55;color:#FEE}
+#tvtable div.prg_rec .prg_title,#tvtable div.prg_hover .prg_title {color:white;}
+#tvtable div.prg_hover  {background-color: #28D;color:#EFF}
+*/
+md-card {
+  margin: 20px;
+  & md-card-header {
+      background-color: #FFE4C8;;
+  }
+}
