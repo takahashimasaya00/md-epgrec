@@ -2,23 +2,21 @@
 
 <!-- tab when watching from mobile -->
 <md-tab-group *ngIf="isDeviceXs">
-  <md-tab label="Tab 1">
-    <div *ngFor="let prog of progList">
+  <md-tab *ngFor="let chan of chanList" label="{{chan.name}}">
+    <div class="prog-panel" *ngFor="let prog of progList">
       <md-card class="program-card">
         <md-card-header>
-          <div md-card-avatar class="example-header-image"></div>
+          <div md-card-avatar class="card-avatar">A</div>
           <md-card-title>{{prog.title}}</md-card-title>
-          <md-card-subtitle>
-            {{prog.starttime|date:'HH:mm'}}&nbsp;-&nbsp;{{prog.endtime|date:'HH:mm'}}
-          </md-card-subtitle>
         </md-card-header>
-        <img md-card-image src="assets/img/examples/shiba2.jpg">
+        <p class="card-subheader">
+          {{prog.starttime|date:'HH:mm'}}&nbsp;-&nbsp;{{prog.endtime|date:'HH:mm'}}
+        </p>
         <md-card-content>{{prog.description}}</md-card-content>
         <md-card-actions>
-          <button md-button>予約</button>
+          <button md-raised-button color="primary">予約</button>
         </md-card-actions>
       </md-card>
     </div>
   </md-tab>
-  <md-tab label="Tab 2">Content 2</md-tab>
 </md-tab-group>

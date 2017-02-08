@@ -12,6 +12,7 @@ import { EpgChannelComponent } from './epg-channel.component';
 // My Services
 import { DeviceService } from './device/device.service';
 import { WindowRefService } from './window-ref/window-ref.service';
+import { ChannelService } from './channel/channel.service';
 import { ProgramService } from './program/program.service';
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ProgramService } from './program/program.service';
   providers: [
     DeviceService,
     WindowRefService,
+    ChannelService,
     ProgramService
   ],
   bootstrap: [AppComponent]

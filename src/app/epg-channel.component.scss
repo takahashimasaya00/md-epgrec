@@ -1,23 +1,57 @@
-/*
-#tvtable div.ctg_news, #category_select a.ctg_news {background-color: #FFFFD8;}
-#tvtable div.ctg_etc, #category_select a.ctg_etc {background-color: #FFFFFF;}
-#tvtable div.ctg_information, #category_select a.ctg_information {background-color: #F2D8FF;}
-#tvtable div.ctg_sports, #category_select a.ctg_sports {background-color: #D8FFFF;}
-#tvtable div.ctg_cinema, #category_select a.ctg_cinema {background-color: #FFD8D8;}
-#tvtable div.ctg_music, #category_select a.ctg_music {background-color: #D8D8FF;}
-#tvtable div.ctg_drama, #category_select a.ctg_drama {background-color: #D8FFD8;}
-#tvtable div.ctg_anime, #category_select a.ctg_anime {background-color: #FFE4C8;}
-#tvtable div.ctg_variety, #category_select a.ctg_variety {background-color: #FFD2EB;}
-#tvtable div.ctg_10, #category_select a.ctg_10 {background-color: #E4F4F4;}
-#tvtable div.ctg-hide, #category_select a.ctg-hide {background-color: #F8F8F8;color:#888;}
-#tvtable div.ctg-hide .prg_title, #category_select a.ctg-hide .prg_title{color:#666;}
-#tvtable div.prg_rec  {background-color: #F55;color:#FEE}
-#tvtable div.prg_rec .prg_title,#tvtable div.prg_hover .prg_title {color:white;}
-#tvtable div.prg_hover  {background-color: #28D;color:#EFF}
-*/
-md-card {
-  margin: 20px;
-  & md-card-header {
-      background-color: #FFE4C8;;
+@import '../styles.scss';
+$md-card-header-height: auto;
+$md-card-padding: 8px;
+
+.prog-panel {
+  padding: 6px 12px 6px 12px;
+
+  md-card {
+    padding: 0;
+
+    md-card-header {
+      height: $md-card-header-height;
+      padding: 8px;
+      color: $white-87-opacity;
+      background-color: $anime;
+      font-size: 14px;
+
+      .card-avatar {
+        flex: 0 0 40px;
+        display: flex;
+        /* 縦方向中央揃え */
+        align-items: center;
+        /* 横方向中央揃え */
+        justify-content: center;
+        color: $anime;
+        background-color: $white-87-opacity;
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      md-card-title {
+        height: 40px;
+        overflow: hidden;
+      }
+    }
+
+    .card-subheader {
+      margin: 0;
+      color: $black-87-opacity;
+      background-color: lighten($anime, 30%);
+      box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+      font-size: 14px;
+      text-align: right;
+    }
+
+    md-card-content {
+      padding: $md-card-padding;
+    }
+
+    md-card-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin: 0 8px 0 8px;
+      padding: 0 0 8px 0;
+    }
   }
 }
