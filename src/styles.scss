@@ -24,11 +24,11 @@ $theme: md-light-theme($primary, $accent);
 //category theming
 $news: #FFFFD8;
 $drama: #D8FFD8;
-$variety: md-color($md-red, A400);;
+$variety: md-color($md-red, A400);
 $etc: #FFFFFF;
 $music: #D8D8FF;
 $information: #F2D8FF;
-$sports: #D8FFFF;
+$sports: md-color($md-green, A700);
 $anime: md-color($md-orange, A400);
 $cinema: #FFD8D8;
 

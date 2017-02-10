@@ -2,7 +2,7 @@ $HEADER_HEIGHT_GT_XS : 64px;
 $HEADER_HEIGHT_XS : 56px;
 
 
-.header {
+md-toolbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,6 +11,12 @@ $HEADER_HEIGHT_XS : 56px;
 
   .app-icon {
     margin: 0 12px 0 0;
+    transition-property: transform;
+    transition-duration: .3s;
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  .side-nav-opened {
+    transform: rotate3d(0, 0, 1, 90deg);
   }
 }
 

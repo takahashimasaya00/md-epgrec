@@ -1,8 +1,9 @@
 <!-- grid when watching from desktop -->
 
 <!-- tab when watching from mobile -->
-<md-tab-group *ngIf="isDeviceXs">
-  <md-tab *ngFor="let chan of chanList" label="{{chan.name}}">
+<md-tab-group *ngIf="isDeviceXs" [style.width]="mdTabGroupWidth">
+  <md-tab *ngFor="let chan of chanList">
+    <template md-tab-label>{{chan.name}}</template>
     <div class="prog-panel" *ngFor="let prog of progList">
       <md-card class="program-card">
         <md-card-header>

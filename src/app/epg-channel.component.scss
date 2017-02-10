@@ -12,7 +12,7 @@ $md-card-padding: 8px;
       height: $md-card-header-height;
       padding: 8px;
       color: $white-87-opacity;
-      background-color: $anime;
+      background-color: $sports;
       font-size: 14px;
 
       .card-avatar {
@@ -22,7 +22,7 @@ $md-card-padding: 8px;
         align-items: center;
         /* 横方向中央揃え */
         justify-content: center;
-        color: $anime;
+        color: $sports;
         background-color: $white-87-opacity;
         font-size: 20px;
         font-weight: 900;
@@ -37,7 +37,7 @@ $md-card-padding: 8px;
     .card-subheader {
       margin: 0;
       color: $black-87-opacity;
-      background-color: lighten($anime, 30%);
+      background-color: lighten($sports, 30%);
       box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
       font-size: 14px;
       text-align: right;

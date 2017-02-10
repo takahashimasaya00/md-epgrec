@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { DeviceService } from './device/device.service';
 import { WindowRefService } from './window-ref/window-ref.service';
 
@@ -37,5 +37,9 @@ export class EpgrecComponent {
       this.sideNavMode = this.SIDENAV.SIDE;
       this.sideNavOpened = true;
     }
+  };
+
+  toggleSideNav(): void {
+    this.sideNavOpened = !this.sideNavOpened;
   };
 }

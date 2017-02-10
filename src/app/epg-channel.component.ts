@@ -16,6 +16,7 @@ export class EpgChannelComponent {
   isDeviceXs: boolean;
   progList: Program[];
   chanList: Channel[];
+  mdTabGroupWidth: string;
 
   constructor(
     private device: DeviceService,
@@ -29,12 +30,17 @@ export class EpgChannelComponent {
     this.progList = prog.getProgram(0, '', '');
 
     // width check
-    this.isDeviceXs = deviceSrv.isMobile(winRef.nativeWindows.innerWidth);
+    this.setWidth(winRef.nativeWindows.innerWidth);
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     // width check
-    this.isDeviceXs = deviceSrv.isMobile(event.target.innerWidth);
+    this.setWidth(event.target.innerWidth);
+  }
+
+  private setWidth(width: number) {
+    this.isDeviceXs = deviceSrv.isMobile(width);
+    this.mdTabGroupWidth = width + 'px';
   }
 }
