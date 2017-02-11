@@ -1,11 +1,5 @@
 import { Injectable } from '@angular/core';
 
-export class Device {
-  device: string;
-  minWidth: number;
-  maxWidth: number;
-}
-
 const DEVICE_PRESET: Device[] = [
   { device: 'xs', minWidth: 0,    maxWidth: 599},
   { device: 'sm', minWidth: 600,  maxWidth: 959},
@@ -13,6 +7,12 @@ const DEVICE_PRESET: Device[] = [
   { device: 'lg', minWidth: 1280, maxWidth: 1919},
   { device: 'xl', minWidth: 1920, maxWidth: 5000}
 ];
+
+export class Device {
+  device: string;
+  minWidth: number;
+  maxWidth: number;
+}
 
 @Injectable()
 export class DeviceService {

@@ -1,10 +1,13 @@
 import { Component, HostListener } from '@angular/core';
-import { DeviceService } from './device/device.service';
-import { WindowRefService } from './window-ref/window-ref.service';
-import { ChannelService, Channel } from './channel/channel.service';
-import { ProgramService, Program } from './program/program.service';
+import { DeviceService } from '../device/device.service';
+import { WindowRefService } from '../window-ref/window-ref.service';
+import { ChannelService, Channel } from '../channel/channel.service';
+import { ProgramService, Program } from '../program/program.service';
 
 let deviceSrv: DeviceService;
+enum Category {
+  news = 1, drama, variety, etc, music, information, sports, anime, cinema
+}
 
 @Component({
   selector: 'app-epg-channel',
@@ -19,10 +22,10 @@ export class EpgChannelComponent {
   mdTabGroupWidth: string;
 
   constructor(
-    private device: DeviceService,
-    private winRef: WindowRefService,
     private chan: ChannelService,
-    private prog: ProgramService
+    private device: DeviceService,
+    private prog: ProgramService,
+    private winRef: WindowRefService
   ) {
     // inject service
     deviceSrv = device;

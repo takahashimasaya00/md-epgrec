@@ -1,6 +1,6 @@
 import { Component, HostListener, Input } from '@angular/core';
-import { DeviceService } from './device/device.service';
-import { WindowRefService } from './window-ref/window-ref.service';
+import { DeviceService } from '../device/device.service';
+import { WindowRefService } from '../window-ref/window-ref.service';
 
 let deviceSrv: DeviceService;
 

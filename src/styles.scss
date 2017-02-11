@@ -22,15 +22,15 @@ $theme: md-light-theme($primary, $accent);
 @include angular-material-theme($theme);
 
 //category theming
-$news: #FFFFD8;
-$drama: #D8FFD8;
+$news: md-color($md-indigo, 500);
+$drama: md-color($md-light-green, 600);
 $variety: md-color($md-red, A400);
-$etc: #FFFFFF;
-$music: #D8D8FF;
-$information: #F2D8FF;
+$etc: md-color($md-grey, 700);
+$music: md-color($md-blue-grey, 500);
+$information: md-color($md-purple, 400);
 $sports: md-color($md-green, A700);
 $anime: md-color($md-orange, A400);
-$cinema: #FFD8D8;
+$cinema: md-color($md-deep-orange, A400);
 
 
 /** common styles **/

@@ -6,20 +6,25 @@ import { MaterialModule } from '@angular/material';
 
 // My Components
 import { AppComponent } from './app.component';
-import { EpgrecComponent } from './epgrec.component';
-import { EpgChannelComponent } from './epg-channel.component';
+import { EpgrecComponent } from './epgrec/epgrec.component';
+import { EpgChannelComponent } from './epg-channel/epg-channel.component';
+
+// My Pipe
+import { CategoryColorPipe } from './category/category-color.pipe';
 
 // My Services
-import { DeviceService } from './device/device.service';
-import { WindowRefService } from './window-ref/window-ref.service';
+import { CategoryService } from './category/category.service';
 import { ChannelService } from './channel/channel.service';
+import { DeviceService } from './device/device.service';
 import { ProgramService } from './program/program.service';
+import { WindowRefService } from './window-ref/window-ref.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     EpgrecComponent,
-    EpgChannelComponent
+    EpgChannelComponent,
+    CategoryColorPipe
   ],
   imports: [
     BrowserModule,
@@ -28,10 +33,11 @@ import { ProgramService } from './program/program.service';
     MaterialModule.forRoot()
   ],
   providers: [
-    DeviceService,
-    WindowRefService,
+    CategoryService,
     ChannelService,
-    ProgramService
+    DeviceService,
+    ProgramService,
+    WindowRefService
   ],
   bootstrap: [AppComponent]
 })
