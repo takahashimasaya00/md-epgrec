@@ -1,10 +1,11 @@
 <md-sidenav-container class="container">
-  <md-sidenav #sidenav class="sidenav" mode="{{sideNavMode}}" opened="{{sideNavOpened}}">
-    Jolly good!
-  </md-sidenav>
+  <md-sidenav #sidenav class="sidenav" mode="{{sideNavMode}}" [opened]="sideNavOpened"
+      (open-start)="toggleSideNav(true)" (close-start)="toggleSideNav(false)">
+    Jolly good!{{sideNavOpened}}
+    </md-sidenav>
 
-  <div class="content">
-    <app-epg-channel></app-epg-channel>
-  </div>
+    <div class="content">
+      <app-epg-channel></app-epg-channel>
+    </div>
 
 </md-sidenav-container>

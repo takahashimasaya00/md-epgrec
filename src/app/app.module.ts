@@ -10,6 +10,7 @@ import { EpgrecComponent } from './epgrec/epgrec.component';
 import { EpgChannelComponent } from './epg-channel/epg-channel.component';
 
 // My Pipe
+import { CategoryAvatarPipe } from './category/category-avatar.pipe';
 import { CategoryColorPipe } from './category/category-color.pipe';
 
 // My Services
@@ -24,6 +25,7 @@ import { WindowRefService } from './window-ref/window-ref.service';
     AppComponent,
     EpgrecComponent,
     EpgChannelComponent,
+    CategoryAvatarPipe,
     CategoryColorPipe
   ],
   imports: [

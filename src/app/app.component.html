@@ -1,8 +1,8 @@
 <md-toolbar color="primary">
-  <md-icon class="app-icon" (click)="epgrec.toggleSideNav();isRotate=!isRotate;" [class.side-nav-opened]="isRotate">menu</md-icon>
+  <md-icon class="app-icon" (click)="isRotate=!isRotate;" [class.side-nav-opened]="isRotate">menu</md-icon>
   <span>{{title}}</span>
   <span class="toolbar-fill-space"></span>
 </md-toolbar>
 <div class="main">
-  <app-epgrec #epgrec></app-epgrec>
+  <app-epgrec #epgrec [(sideNavOpened)]="isRotate"></app-epgrec>
 </div>

@@ -1,29 +1,31 @@
-$HEADER_HEIGHT_GT_XS : 64px;
-$HEADER_HEIGHT_XS : 56px;
-
+@import '../styles.scss';
 
 md-toolbar {
+  @include piling-deep();
   position: fixed;
   top: 0;
   left: 0;
-  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
   z-index: 10;
 
   .app-icon {
     margin: 0 12px 0 0;
     transition-property: transform;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
     transform: rotate3d(0, 0, 1, 0deg);
   }
+
   .side-nav-opened {
     transform: rotate3d(0, 0, 1, 90deg);
   }
 }
 
 .main {
-  margin-top: $HEADER_HEIGHT_GT_XS;
+  margin-top: $HEADER_HEIGHT;
   @media (max-width: 600px) and (orientation: portrait) {
-      margin-top: $HEADER_HEIGHT_XS;
+    margin-top: $HEADER_HEIGHT_XS_PL;
+  }
+  @media (max-width: 960px) and (orientation: landscape) {
+    margin-top: $HEADER_HEIGHT_SM_LS;
   }
 }
 

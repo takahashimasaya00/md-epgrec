@@ -31,7 +31,7 @@ export class DeviceService {
 
   isMobile(width: number): boolean {
     for (let i = 0 ; i < DEVICE_PRESET.length; i++) {
-      if (DEVICE_PRESET[i].device === 'xs') {
+      if (DEVICE_PRESET[i].device === 'sm') {
         return this.getDevice(width).maxWidth <= DEVICE_PRESET[i].maxWidth;
       }
     }

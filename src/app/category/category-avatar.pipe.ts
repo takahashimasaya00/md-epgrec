@@ -1,11 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { CategoryService } from './category.service';
 
-
 let cateSrv: CategoryService;
 
-@Pipe({name: 'categoryColor'})
-export class CategoryColorPipe implements PipeTransform {
+@Pipe({name: 'categoryAvatar'})
+export class CategoryAvatarPipe implements PipeTransform {
   constructor(private cate: CategoryService) {
     cateSrv = cate;
   }
@@ -14,7 +13,7 @@ export class CategoryColorPipe implements PipeTransform {
     const cateList = cateSrv.getCategory(1);
     for (let i = 0; cateList.length; i++) {
       if (cateList[i].id === id) {
-        return cateList[i].nameEn;
+        return cateList[i].nameEn.substring(0, 1);
       }
     }
     return null;

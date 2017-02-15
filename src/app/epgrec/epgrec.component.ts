@@ -1,4 +1,4 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { DeviceService } from '../device/device.service';
 import { WindowRefService } from '../window-ref/window-ref.service';
 
@@ -17,7 +17,10 @@ export class EpgrecComponent {
     PUSH: 'push'
   };
   sideNavMode: string;
+  @Input()
   sideNavOpened: boolean;
+  @Output()
+  sideNavOpenedChange = new EventEmitter<boolean>();
 
   constructor(private device: DeviceService, private winRef: WindowRefService) {
     deviceSrv = device;
@@ -32,14 +35,23 @@ export class EpgrecComponent {
   setSideNavStyle(width: number): void {
     if (deviceSrv.isMobile(width)) {
       this.sideNavMode = this.SIDENAV.OVER;
-      this.sideNavOpened = false;
+      this.toggleSideNav(false);
     } else {
       this.sideNavMode = this.SIDENAV.SIDE;
-      this.sideNavOpened = true;
+      this.toggleSideNav(true);
     }
   };
 
-  toggleSideNav(): void {
-    this.sideNavOpened = !this.sideNavOpened;
+  toggleSideNav(isOpen: boolean): void {
+    if (isOpen === undefined || isOpen === null) {
+      this.sideNavOpened = !this.sideNavOpened;
+    } else {
+      this.sideNavOpened = isOpen;
+    }
+    this.sideNavOpenedChange.emit(this.sideNavOpened);
   };
+}
+
+export class SideNav {
+
 }

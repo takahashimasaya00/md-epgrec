@@ -7,7 +7,7 @@
     <div class="prog-panel" *ngFor="let prog of progList">
       <md-card class="program-card">
         <md-card-header [ngClass]="prog.categoryId|categoryColor">
-          <div md-card-avatar class="card-avatar">A</div>
+          <div md-card-avatar class="card-avatar">{{prog.categoryId|categoryAvatar|uppercase}}</div>
           <md-card-title>{{prog.title}}</md-card-title>
         </md-card-header>
         <p class="card-subheader"  [ngClass]="prog.categoryId|categoryColor">
