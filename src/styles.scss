@@ -29,8 +29,13 @@ $HEADER_HEIGHT: 64px;
 $HEADER_HEIGHT_XS_PL: 56px;
 $HEADER_HEIGHT_SM_LS: 48px;
 
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
 body {
   margin: 0;
+  overflow: hidden;
 }
 
 @mixin piling-pale() {

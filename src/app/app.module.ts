@@ -8,10 +8,12 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { EpgrecComponent } from './epgrec/epgrec.component';
 import { EpgChannelComponent } from './epg-channel/epg-channel.component';
+import { ProgramComponent } from './program/program.component';
 
 // My Pipe
 import { CategoryAvatarPipe } from './category/category-avatar.pipe';
 import { CategoryColorPipe } from './category/category-color.pipe';
+import { DatexPipe } from './datex/datex.pipe';
 
 // My Services
 import { CategoryService } from './category/category.service';
@@ -25,8 +27,10 @@ import { WindowRefService } from './window-ref/window-ref.service';
     AppComponent,
     EpgrecComponent,
     EpgChannelComponent,
+    ProgramComponent,
     CategoryAvatarPipe,
-    CategoryColorPipe
+    CategoryColorPipe,
+    DatexPipe
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,149 @@
+@import '../../styles.scss';
+
+$md-card-header-height: auto;
+$md-card-padding: 8px;
+
+md-card {
+  padding: 0;
+
+  md-card-header {
+    height: $md-card-header-height;
+    margin: 0;
+    padding: $md-card-padding;
+    color: $white-87-opacity;
+    background-color: $black-87-opacity;
+    font-size: 14px;
+
+    .card-avatar {
+      flex: 0 0 40px;
+      display: flex;
+      /* 縦方向中央揃え */
+      align-items: center;
+      /* 横方向中央揃え */
+      justify-content: center;
+      background-color: $white-87-opacity;
+      color: $black-87-opacity;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    &.news {
+      background-color: $news;
+      .card-avatar {
+        @extend .card-avatar;
+        color: $news;
+      }
+    }
+    &.drama {
+      background-color: $drama;
+      .card-avatar {
+        @extend .card-avatar;
+        color: $drama;
+      }
+    }
+    &.variety {
+      background-color: $variety;
+      .card-avatar {
+        @extend .card-avatar;
+        color: $variety;
+      }
+    }
+    &.etc {
+      background-color: $etc;
+      .card-avatar {
+        @extend .card-avatar;
+        color: $etc;
+      }
+    }
+    &.music {
+      background-color: $music;
+      .card-avatar {
+        @extend .card-avatar;
+        color: $music;
+      }
+    }
+    &.information {
+      background-color: $information;
+      .card-avatar {
+        @extend .card-avatar;
+        color: $information;
+      }
+    }
+    &.sports {
+      background-color: $sports;
+      .card-avatar {
+        @extend .card-avatar;
+        color: $sports;
+      }
+    }
+    &.anime {
+      background-color: $anime;
+      .card-avatar {
+        @extend .card-avatar;
+        color: $anime;
+      }
+    }
+    &.cinema {
+      background-color: $cinema;
+      .card-avatar {
+        @extend .card-avatar;
+        color: $cinema;
+      }
+    }
+
+    md-card-title {
+      height: 40px;
+      overflow: hidden;
+    }
+  }
+
+  .card-subheader {
+    @include piling-pale();
+    margin: 0;
+    padding: 0 $md-card-padding;
+    color: $black-87-opacity;
+    background-color: lighten($black-87-opacity, 30%);
+    font-size: 14px;
+    text-align: right;
+
+    &.news {
+      background-color: lighten($news, 30%);
+    }
+    &.drama {
+      background-color: lighten($drama, 30%);
+    }
+    &.variety {
+      background-color: lighten($variety, 30%);
+    }
+    &.etc {
+      background-color: lighten($etc, 30%);
+    }
+    &.music {
+      background-color: lighten($music, 30%);
+    }
+    &.information {
+      background-color: lighten($information, 30%);
+    }
+    &.sports {
+      background-color: lighten($sports, 30%);
+    }
+    &.anime {
+      background-color: lighten($anime, 30%);
+    }
+    &.cinema {
+      background-color: lighten($cinema, 30%);
+    }
+  }
+
+  md-card-content {
+    padding: $md-card-padding;
+    margin-bottom: 0;
+  }
+
+  md-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 8px;
+    padding: 0 0 8px 0;
+  }
+}

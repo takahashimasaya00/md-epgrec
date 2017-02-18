@@ -4,20 +4,13 @@
 <md-tab-group *ngIf="isDeviceXs" [style.width]="mdTabGroupWidth">
   <md-tab *ngFor="let chan of chanList">
     <template md-tab-label>{{chan.name}}</template>
-    <div class="prog-panel" *ngFor="let prog of progList">
-      <md-card class="program-card">
-        <md-card-header [ngClass]="prog.categoryId|categoryColor">
-          <div md-card-avatar class="card-avatar">{{prog.categoryId|categoryAvatar|uppercase}}</div>
-          <md-card-title>{{prog.title}}</md-card-title>
-        </md-card-header>
-        <p class="card-subheader"  [ngClass]="prog.categoryId|categoryColor">
-          {{prog.starttime|date:'HH:mm'}}&nbsp;-&nbsp;{{prog.endtime|date:'HH:mm'}}
-        </p>
-        <md-card-content>{{prog.description}}</md-card-content>
-        <md-card-actions>
-          <button md-raised-button color="primary">予約</button>
-        </md-card-actions>
-      </md-card>
+    <div id="tab-content">
+    <div id="timeline"></div>
+      <div id="program-panel">
+      <div class="program" *ngFor="let prog of progList">
+        <app-program [program]="prog"></app-program>
+      </div>
     </div>
+  </div>
   </md-tab>
 </md-tab-group>

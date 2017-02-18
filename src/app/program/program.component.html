@@ -1,0 +1,13 @@
+<md-card>
+  <md-card-header [ngClass]="program.categoryId|categoryColor">
+    <div md-card-avatar class="card-avatar">{{program.categoryId|categoryAvatar|uppercase}}</div>
+    <md-card-title>{{program.title}}</md-card-title>
+  </md-card-header>
+  <p class="card-subheader" [ngClass]="program.categoryId|categoryColor">
+    {{program.starttime|datex:'HH:mm'}}&nbsp;-&nbsp;{{program.endtime|datex:'HH:mm'}}
+  </p>
+  <md-card-content>{{program.description}}</md-card-content>
+  <md-card-actions>
+    <button md-raised-button color="primary">予約</button>
+  </md-card-actions>
+</md-card>
