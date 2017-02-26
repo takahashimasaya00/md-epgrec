@@ -2,15 +2,15 @@
 
 <!-- tab when watching from mobile -->
 <md-tab-group *ngIf="isDeviceXs" [style.width]="mdTabGroupWidth">
-  <md-tab *ngFor="let chan of chanList">
+  <md-tab *ngFor="let chan of chanList; let i = index;">
     <template md-tab-label>{{chan.name}}</template>
-    <div id="tab-content">
-    <div id="timeline"></div>
-      <div id="program-panel">
-      <div class="program" *ngFor="let prog of progList">
-        <app-program [program]="prog"></app-program>
+    <div class="tab-content">
+      <div class="timeline"></div>
+      <div class="program-panel">
+        <div class="program" *ngFor="let prog of progList">
+          <app-program [program]="prog"></app-program>
+        </div>
       </div>
     </div>
-  </div>
   </md-tab>
 </md-tab-group>

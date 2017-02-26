@@ -1,15 +1,15 @@
 @import '../../styles.scss';
 
-#tab-content {
+.tab-content {
   display: flex;
   flex-direction: row;
   align-items: stretch;
 
-  #timeline {
+  .timeline {
     flex: 0 0 20%;
   }
 
-  #program-panel {
+  .program-panel {
     flex: 1 1 auto;
     width: 100%;
     padding: 12px;

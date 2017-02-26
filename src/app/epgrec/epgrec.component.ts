@@ -1,8 +1,7 @@
-import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { ScrollSpyModule, ScrollSpyService } from 'ng2-scrollspy';
 import { DeviceService } from '../device/device.service';
 import { WindowRefService } from '../window-ref/window-ref.service';
-
-let deviceSrv: DeviceService;
 
 @Component({
   selector: 'app-epgrec',
@@ -10,7 +9,7 @@ let deviceSrv: DeviceService;
   styleUrls: ['./epgrec.component.scss']
 })
 
-export class EpgrecComponent {
+export class EpgrecComponent implements AfterViewInit {
   SIDENAV: { SIDE: string, OVER: string, PUSH: string } = {
     SIDE: 'side',
     OVER: 'over',
@@ -22,18 +21,16 @@ export class EpgrecComponent {
   @Output()
   sideNavOpenedChange = new EventEmitter<boolean>();
 
-  constructor(private device: DeviceService, private winRef: WindowRefService) {
-    deviceSrv = device;
+  constructor(
+    private scrollSpyService: ScrollSpyService,
+    private device: DeviceService,
+    private winRef: WindowRefService
+  ) {
     this.setSideNavStyle(winRef.nativeWindows.innerWidth);
   };
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.setSideNavStyle(event.target.innerWidth);
-  };
-
   setSideNavStyle(width: number): void {
-    if (deviceSrv.isMobile(width)) {
+    if (this.device.isMobile(width)) {
       this.sideNavMode = this.SIDENAV.OVER;
       this.toggleSideNav(false);
     } else {
@@ -50,8 +47,15 @@ export class EpgrecComponent {
     }
     this.sideNavOpenedChange.emit(this.sideNavOpened);
   };
-}
 
-export class SideNav {
+  ngAfterViewInit() {
+    this.scrollSpyService.getObservable('test').subscribe((e: any) => {
+      console.log('ScrollSpy::test: ', e.target.scrollTop, e.target.offsetHeight);
+    });
+  }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.setSideNavStyle(event.target.innerWidth);
+  };
 }

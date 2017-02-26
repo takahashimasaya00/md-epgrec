@@ -4,7 +4,6 @@ import { WindowRefService } from '../window-ref/window-ref.service';
 import { ChannelService, Channel } from '../channel/channel.service';
 import { ProgramService, Program } from '../program/program.service';
 
-let deviceSrv: DeviceService;
 enum Category {
   news = 1, drama, variety, etc, music, information, sports, anime, cinema
 }
@@ -27,8 +26,6 @@ export class EpgChannelComponent {
     private prog: ProgramService,
     private winRef: WindowRefService
   ) {
-    // inject service
-    deviceSrv = device;
     this.chanList = chan.getChannel(0, '', '');
     this.progList = prog.getProgram(0, '', '');
 
@@ -43,7 +40,7 @@ export class EpgChannelComponent {
   }
 
   private setWidth(width: number) {
-    this.isDeviceXs = deviceSrv.isMobile(width);
+    this.isDeviceXs = this.device.isMobile(width);
     this.mdTabGroupWidth = width + 'px';
   }
 }
